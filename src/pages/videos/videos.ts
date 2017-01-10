@@ -21,7 +21,7 @@ export class VideosPage {
       if (this.platform.is('cordova')) {
         filePath = 'file:///android_asset/www/video/' + fileName + '.mp4';
       } else {
-        filePath = './assets/doc/' + fileName + '.pdf';
+        filePath = './assets/doc/' + fileName + '.mp4';
       }
       console.log('Open video at ' + filePath);
 
