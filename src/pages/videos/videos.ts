@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
-import { File, VideoPlayer } from 'ionic-native';
+import { VideoPlayer } from 'ionic-native';
 
 @Component({
   selector: 'page-videos',
@@ -19,9 +19,9 @@ export class VideosPage {
 
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
-        filePath = 'file:///android_asset/www/video/' + fileName + '.mp4';
+        filePath = 'file:///android_asset/www/assets/video/' + fileName + '.mp4';
       } else {
-        filePath = './assets/doc/' + fileName + '.pdf';
+        filePath = './assets/video/' + fileName + '.mp4';
       }
       console.log('Open video at ' + filePath);
 

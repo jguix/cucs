@@ -21,7 +21,7 @@ export class ScoresPage {
 
     this.platform.ready().then(() => {
       if (this.platform.is('cordova')) {
-        filePath = `${cordova.file.applicationDirectory}www/doc/${fileName}.pdf`;
+        filePath = 'file:///android_asset/www/assets/doc/' + fileName + '.pdf';
         // filePath = 'file:///android_asset/www/assets/doc/' + fileName + '.pdf';
         // File.resolveLocalFilesystemUrl(filePath)
         //   .then((res) => {
