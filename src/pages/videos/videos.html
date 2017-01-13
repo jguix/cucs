@@ -5,34 +5,29 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-<!--<ion-list>-->
-
-    <!--<ion-list-header>Vídeos</ion-list-header>-->
-
-    <button ion-item (click)="play('timbalada-partes')">
-      Timbalada
-    </button>
-
-    <!--<video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">-->
-      <!--<source src="http://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4" type="video/mp4"/>-->
-    <!--</video>-->
 
   <ion-card>
-    <iframe src="https://player.vimeo.com/video/198876930?byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <div class="card-title">Reggae por instrumentos</div>
+    <iframe src="https://player.vimeo.com/video/198876930" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <h2>Reggae por instrumentos</h2>
   </ion-card>
 
   <ion-card>
-    <iframe src="https://player.vimeo.com/video/198876893?byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <div class="card-title">Funky-maksum por instrumentos</div>
+    <iframe src="https://player.vimeo.com/video/198876893" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <h2>Funky-maksum por instrumentos</h2>
   </ion-card>
-
 
   <ion-card>
-    <iframe src="https://player.vimeo.com/video/198876963?byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <div class="card-title">
-      Timbalada por instrumentos</div>
+    <iframe src="https://player.vimeo.com/video/198876963" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <h2>Timbalada por instrumentos</h2>
   </ion-card>
 
-<!--</ion-list>-->
+  <!--<div padding *ngFor="let video of videos">
+    <h3>{{video.title}}</h3>
+    <div>{{video.embedHtml}}</div>
+  </div>
+
+  <div padding *ngFor="let iframe of iframes">
+    <div [innerHTML]="iframe.html"></div>
+  </div>-->
+
 </ion-content>
