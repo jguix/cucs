@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.cucs" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.jguix.cucs" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>cucs</name>
   <description>An awesome Ionic/Cordova app.</description>
   <author email="juangui@gmail.com" href="https://www.facebook.com/elscucsdevelluters">Juangui Jordán</author>
   <content src="index.html"/>
   <access origin="*"/>
+  <allow-navigation href="*"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
