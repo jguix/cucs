@@ -15,15 +15,15 @@ export class VideosPage implements OnInit {
   private fields = 'name,description,pictures.sizes,tags.name,uri,embed';
 
   videos = [
-    { 
+    {
       id: '198876930',
       title: 'Reggae por instrumentos'
     },
-    { 
+    {
       id: '198876893',
       title: 'Funky-maksum por instrumentos'
     },
-    { 
+    {
       id: '198876963',
       title: 'Timbalada por instrumentos'
     }
@@ -43,8 +43,8 @@ export class VideosPage implements OnInit {
     this.getVideos()
       .subscribe( (res) => console.log('Video: ' + JSON.stringify(res))); 
     // this.jsonp.request('https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/198876930&callback=JSONP_CALLBACK')
-    //   .subscribe( (res) => console.log(JSON.stringify(res))); 
-    
+    //   .subscribe( (res) => console.log(JSON.stringify(res)));
+
     // Observable.from(this.videos)
     //   .flatMap( (video) => {
     //     let url = `https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/${video.id}&callback=JSONP_CALLBACK`;
