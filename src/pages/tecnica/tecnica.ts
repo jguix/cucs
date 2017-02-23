@@ -6,24 +6,24 @@ import { Observable } from 'rxjs';
 import 'rxjs/operator/map';
 
 @Component({
-  selector: 'page-videos',
-  templateUrl: 'videos.html'
+  selector: 'page-tecnica',
+  templateUrl: 'tecnica.html'
 })
 export class TecnicaPage implements OnInit {
   private accessToken = '19120bbaf6646d270108f6ea074d0fe5';
   private apiUrl = 'https://api.vimeo.com';
   private fields = 'name,description,pictures.sizes,tags.name,uri,embed';
-  private videos: Video;
+  private videos: Video[] = [];
 
   constructor(
-    public navCtrl: NavController,
-    public platform: Platform,
-    private http: Http) {
+      public navCtrl: NavController,
+      public platform: Platform,
+      private http: Http) {
+          this.getVideos().subscribe((video) => this.videos.push(video)); 
   }
 
   ngOnInit() {
-    this.getVideos()
-      .subscribe( (res) => console.log('Video: ' + JSON.stringify(res))); 
+
   }
 
  /**
@@ -35,7 +35,7 @@ export class TecnicaPage implements OnInit {
    * - tags
    * - uri
    */
-  getVideos(): Observable<any> {
+  getVideos(): Observable<Video> {
     let headers = new Headers({ 'Accept': 'application/json' });
     headers.append('Authorization', `Bearer ${this.accessToken}`);
 

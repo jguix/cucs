@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { ManifestPage, ScoresPage, VideosPage } from '../../pages';
+import { ManifestPage, ScoresPage, VideosPage, TecnicaPage } from '../../pages';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
   tab1Root: any = VideosPage;
-  tab2Root: any = ScoresPage;
-  tab3Root: any = ManifestPage;
+  tab2Root: any = TecnicaPage;
+  tab3Root: any = ScoresPage;
+  tab4Root: any = ManifestPage;
 
   constructor() {
 

@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { JsonpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { TabsPage, ManifestPage, ScoresPage, VideosPage } from '../pages';
+import { TabsPage, ManifestPage, ScoresPage, TecnicaPage, VideosPage } from '../pages';
 
 @NgModule({
   declarations: [
@@ -10,6 +10,7 @@ import { TabsPage, ManifestPage, ScoresPage, VideosPage } from '../pages';
     ManifestPage,
     ScoresPage,
     TabsPage,
+    TecnicaPage,
     VideosPage
   ],
   imports: [
@@ -22,6 +23,7 @@ import { TabsPage, ManifestPage, ScoresPage, VideosPage } from '../pages';
     ManifestPage,
     ScoresPage,
     TabsPage,
+    TecnicaPage,
     VideosPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

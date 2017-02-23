@@ -40,58 +40,6 @@ export class VideosPage implements OnInit {
   }
 
   ngOnInit() {
-    this.getVideos()
-      .subscribe( (res) => console.log('Video: ' + JSON.stringify(res))); 
-    // this.jsonp.request('https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/198876930&callback=JSONP_CALLBACK')
-    //   .subscribe( (res) => console.log(JSON.stringify(res)));
-
-    // Observable.from(this.videos)
-    //   .flatMap( (video) => {
-    //     let url = `https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/${video.id}&callback=JSONP_CALLBACK`;
-    //     // _body.html
-    //     return this.jsonp.request(url);
-    //   })
-    //   .map( (res: any) => {
-    //     console.log('html: ' + res._body.html);
-    //     this.iframes.push({html: res._body.html});
-    //     console.log(JSON.stringify(this.iframes));
-    //   })
-    //   .subscribe();
-  }
-
- /**
-   * Video properties
-   * - name
-   * - description
-   * - embed
-   * - pictures
-   * - tags
-   * - uri
-   */
-  getVideos(): Observable<any> {
-    let headers = new Headers({ 'Accept': 'application/json' });
-    headers.append('Authorization', `Bearer ${this.accessToken}`);
-
-    let options = new RequestOptions({ headers: headers });
-    return this.http.get(`${this.apiUrl}/me/albums/4393807/videos?fields=${this.fields}`, options)
-      .map(res => res.json().data)
-      .flatMap((video, index) => video)
-      .map((video: any): Video => {
-        const tags = video.tags.map((tag) => tag.name);
-        return {
-          name: video.name,
-          description: video.description,
-          tags: tags,
-          thumbnail: {
-            width: video.pictures.sizes[1].width,
-            height: video.pictures.sizes[1].height,
-            src: video.pictures.sizes[1].link,
-            },
-          uri: video.uri,
-          embed: video.embed.html
-        }
-      });
-
   }
 
 }
