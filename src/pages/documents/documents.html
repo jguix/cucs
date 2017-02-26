@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Documentos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <button ion-item (click)="openLocalPDF('como-entrar-al-drive', 'external')">
+      <ion-icon name="paper" item-left></ion-icon>
+      Cómo entrar al Drive de Cucs
+    </button>
+
+    <button ion-item (click)="goToManifest()">
+      <ion-icon name="paper" item-left></ion-icon>
+      Manifiesto
+    </button>
+
+    <button ion-item (click)="goToScores()">
+      <ion-icon name="paper" item-left></ion-icon>
+      Partituras
+    </button>
+
+  </ion-list>
+</ion-content>

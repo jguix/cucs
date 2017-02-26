@@ -18,16 +18,15 @@ export class ScoresPage {
     public platform: Platform) {
   }
 
-  // openRemotePDF(cachedir?: string) {
-  //   const filePath = 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf';
-  //   this.presentLoading('Opening remote PDF... \nIf you don\'t see a PDF, \nsomething went wrong');
-  //   this.openPDF(filePath, cachedir);
-  // }
-
   openLocalPDF(fileName: string, cachedir?: string) {
-    const filePath = `cdvfile://localhost/assets/www/assets/doc/${fileName}.pdf`;
-    this.presentLoading('Abriendo PDF...');
-    this.openPDF(filePath, cachedir);
+    if (!this.platform.is('mobile')) {
+      window.open('./assets/doc/' + fileName + '.pdf', '_blank');
+    } else {
+      const filePath = `cdvfile://localhost/assets/www/assets/doc/${fileName}.pdf`;
+      // In case of not cordova
+      this.presentLoading('Abriendo PDF...');
+      this.openPDF(filePath, cachedir);
+    }
   }
 
   private openPDF(filePath: string, cachedir?: string) {

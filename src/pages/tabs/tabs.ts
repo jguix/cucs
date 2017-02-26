@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ManifestPage, ScoresPage, VideosPage, TecnicaPage } from '../../pages';
+import { DocumentsPage, VideosPage, TecnicaPage } from '../../pages';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -7,8 +7,7 @@ import { ManifestPage, ScoresPage, VideosPage, TecnicaPage } from '../../pages';
 export class TabsPage {
   tab1Root: any = VideosPage;
   tab2Root: any = TecnicaPage;
-  tab3Root: any = ScoresPage;
-  tab4Root: any = ManifestPage;
+  tab3Root: any = DocumentsPage;
 
   constructor() {
 

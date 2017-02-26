@@ -2,10 +2,18 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { JsonpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { TabsPage, ManifestPage, ScoresPage, TecnicaPage, VideosPage } from '../pages';
+import {
+  DocumentsPage,
+  ManifestPage,
+  ScoresPage,
+  TabsPage,
+  TecnicaPage,
+  VideosPage
+} from '../pages';
 
 @NgModule({
   declarations: [
+    DocumentsPage,
     MyApp,
     ManifestPage,
     ScoresPage,
@@ -20,12 +28,15 @@ import { TabsPage, ManifestPage, ScoresPage, TecnicaPage, VideosPage } from '../
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    DocumentsPage,
     ManifestPage,
     ScoresPage,
     TabsPage,
     TecnicaPage,
     VideosPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule {}
