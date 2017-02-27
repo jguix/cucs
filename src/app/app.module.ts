@@ -7,7 +7,7 @@ import {
   ManifestPage,
   ScoresPage,
   TabsPage,
-  TecnicaPage,
+  TechniquePage,
   VideosPage
 } from '../pages';
 
@@ -18,7 +18,7 @@ import {
     ManifestPage,
     ScoresPage,
     TabsPage,
-    TecnicaPage,
+    TechniquePage,
     VideosPage
   ],
   imports: [
@@ -32,7 +32,7 @@ import {
     ManifestPage,
     ScoresPage,
     TabsPage,
-    TecnicaPage,
+    TechniquePage,
     VideosPage
   ],
   providers: [
