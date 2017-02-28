@@ -6,6 +6,8 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <div [innerHTML]="embed | safeHtml">
-  </div>
+  <ion-row>
+    <ion-col [innerHTML]="embed | safeHtml">
+    </ion-col>
+  </ion-row>
 </ion-content>
