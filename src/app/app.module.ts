@@ -5,17 +5,21 @@ import { MyApp } from './app.component';
 import {
   DocumentsPage,
   ManifestPage,
+  MediaPlayer,
   ScoresPage,
   TabsPage,
   TechniquePage,
   VideosPage
 } from '../pages';
+import {SafePipe} from "../pages/media-player/safe.pipe";
 
 @NgModule({
   declarations: [
     DocumentsPage,
     MyApp,
     ManifestPage,
+    MediaPlayer,
+    SafePipe,
     ScoresPage,
     TabsPage,
     TechniquePage,
@@ -30,6 +34,7 @@ import {
     MyApp,
     DocumentsPage,
     ManifestPage,
+    MediaPlayer,
     ScoresPage,
     TabsPage,
     TechniquePage,

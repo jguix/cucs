@@ -4,6 +4,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { Video } from '../../shared/data-model/video.model'
 import { Observable } from 'rxjs';
 import 'rxjs/operator/map';
+import {MediaPlayer} from "../media-player/media-player";
 
 @Component({
   selector: 'page-technique',
@@ -24,6 +25,15 @@ export class TechniquePage implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  watchVideo(video: Video) {
+    console.log('Let\'s watch video: ' + JSON.stringify(video));
+    const navParams = {
+      title: video.name,
+      embed: video.embed
+    }
+    this.navCtrl.push(MediaPlayer, navParams);
   }
 
  /**

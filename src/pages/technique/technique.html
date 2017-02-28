@@ -15,7 +15,7 @@
             </ion-thumbnail>
             <h2>{{video.name}}</h2>
             <p>{{video.description}}</p>
-            <button ion-button clear item-right>Ver</button>
+            <button ion-button clear item-right (click)="watchVideo(video)">Ver</button>
         </ion-item>
     </ion-list>
 </ion-content>
