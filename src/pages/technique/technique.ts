@@ -13,7 +13,7 @@ import {MediaPlayer} from "../media-player/media-player";
 export class TechniquePage implements OnInit {
   private accessToken = '19120bbaf6646d270108f6ea074d0fe5';
   private apiUrl = 'https://api.vimeo.com';
-  private fields = 'name,description,pictures.sizes,tags.name,uri,embed';
+  private fields = 'name,description,pictures.sizes,tags.name,uri,width,height';
   private videos: Video[] = [];
 
   constructor(
@@ -30,8 +30,10 @@ export class TechniquePage implements OnInit {
   watchVideo(video: Video) {
     console.log('Let\'s watch video: ' + JSON.stringify(video));
     const navParams = {
-      title: video.name,
-      embed: video.embed
+      id: video.id,
+      title: video.title,
+      width: video.width,
+      height: video.height
     }
     this.navCtrl.push(MediaPlayer, navParams);
   }
@@ -56,16 +58,17 @@ export class TechniquePage implements OnInit {
       .map((video: any): Video => {
         const tags = video.tags.map((tag) => tag.name);
         return {
-          name: video.name,
+          id: video.uri.replace('/videos/',''),
+          title: video.name,
           description: video.description,
+          width: video.width,
+          height: video.height,
           tags: tags,
           thumbnail: {
             width: video.pictures.sizes[1].width,
             height: video.pictures.sizes[1].height,
-            src: video.pictures.sizes[1].link,
-            },
-          uri: video.uri,
-          embed: video.embed.html
+            src: video.pictures.sizes[1].link
+            }
         }
       });
 

@@ -1,10 +1,11 @@
 import {Thumbnail} from './thumbnail.model';
 
 export interface Video {
-    name: string;
+    id: string;
+    title: string;
     description: string;
+    width: number;
+    height: number;
     tags: string[];
     thumbnail: Thumbnail;
-    uri: string;
-    embed: string;
 }
