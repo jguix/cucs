@@ -5,34 +5,5 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-
-  <ion-card>
-    <iframe src="https://player.vimeo.com/video/200104337" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <p><a href="https://vimeo.com/200104337">Gotafumeiro por instrumentos</a></p>
-  </ion-card>
-
-  <ion-card>
-    <iframe src="https://player.vimeo.com/video/198876963" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <p><a href="https://vimeo.com/198876963">Timbalada por instrumentos</a></p>
-  </ion-card>
-
-  <ion-card>
-    <iframe src="https://player.vimeo.com/video/198876893" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <p><a href="https://vimeo.com/198876893">Funky-maksum por instrumentos</a></p>
-  </ion-card>
-
-  <ion-card>
-    <iframe src="https://player.vimeo.com/video/198876930" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <p><a href="https://vimeo.com/198876930">Reggae por instrumentos</a></p>
-  </ion-card>
-
-  <!--<div padding *ngFor="let video of videos">
-    <h3>{{video.title}}</h3>
-    <div>{{video.embedHtml}}</div>
-  </div>
-
-  <div padding *ngFor="let iframe of iframes">
-    <div [innerHTML]="iframe.html"></div>
-  </div>-->
-
+  <video-album [id]="albumId"></video-album>
 </ion-content>

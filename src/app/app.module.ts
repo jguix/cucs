@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { JsonpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+// Pages
 import {
   DocumentsPage,
   ManifestPage,
@@ -11,6 +12,9 @@ import {
   TechniquePage,
   VideosPage
 } from '../pages';
+// Components
+import {VideoAlbumComponent} from "../shared/components/video-album.component";
+// Pipes
 import {SafePipe} from "../pages/media-player/safe.pipe";
 
 @NgModule({
@@ -23,6 +27,7 @@ import {SafePipe} from "../pages/media-player/safe.pipe";
     ScoresPage,
     TabsPage,
     TechniquePage,
+    VideoAlbumComponent,
     VideosPage
   ],
   imports: [
