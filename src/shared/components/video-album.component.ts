@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import { App, NavController, Platform } from 'ionic-angular';
+import {App, NavController, Platform, LoadingController} from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Video } from '../../shared/data-model/video.model'
 import { MediaPlayer } from '../../pages';
@@ -21,12 +21,22 @@ export class VideoAlbumComponent implements OnInit {
     public appCtrl: App,
     public navCtrl: NavController,
     public platform: Platform,
+    public loadingCtrl: LoadingController,
     private http: Http) {
 
   }
 
   ngOnInit() {
-    this.getVideos().subscribe((video) => this.videos.push(video));
+    let loading = this.loadingCtrl.create({
+      content: 'Cargando...',
+      duration: 5000
+    });
+    loading.present();
+
+    this.getVideos().subscribe(
+      (video) => this.videos.push(video),
+      (error) => console.log(error),
+      () => loading.dismiss());
   }
 
   watchVideo(video: Video) {
