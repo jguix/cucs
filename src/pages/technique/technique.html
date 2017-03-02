@@ -5,14 +5,5 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-    <ion-list>
-        <ion-item *ngFor='let video of videos'>
-            <ion-thumbnail item-left>
-                <img [src]="video.thumbnail.src">
-            </ion-thumbnail>
-            <h2>{{video.name}}</h2>
-            <p>{{video.description}}</p>
-            <button ion-button clear item-right (click)="watchVideo(video)">Ver</button>
-        </ion-item>
-    </ion-list>
+  <video-album [id]="4393807"></video-album>
 </ion-content>

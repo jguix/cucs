@@ -26,12 +26,10 @@ export class VideoAlbumComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Video id: ' + this.id);
     this.getVideos().subscribe((video) => this.videos.push(video));
   }
 
   watchVideo(video: Video) {
-    console.log('Let\'s watch video: ' + JSON.stringify(video));
     const navParams = {
       id: video.id,
       title: video.title,
