@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { App, NavController, Platform } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Video } from '../../shared/data-model/video.model'
 import { Observable } from 'rxjs';
@@ -17,10 +17,11 @@ export class TechniquePage implements OnInit {
   private videos: Video[] = [];
 
   constructor(
-      public navCtrl: NavController,
-      public platform: Platform,
-      private http: Http) {
-          this.getVideos().subscribe((video) => this.videos.push(video));
+    public appCtrl: App,
+    public navCtrl: NavController,
+    public platform: Platform,
+    private http: Http) {
+    this.getVideos().subscribe((video) => this.videos.push(video));
   }
 
   ngOnInit() {
@@ -34,11 +35,11 @@ export class TechniquePage implements OnInit {
       title: video.title,
       width: video.width,
       height: video.height
-    }
-    this.navCtrl.push(MediaPlayer, navParams);
+    };
+    this.appCtrl.getRootNav().push(MediaPlayer, navParams);
   }
 
- /**
+  /**
    * Video properties
    * - name
    * - description
